@@ -1,0 +1,234 @@
+<html>
+   <style>
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #808080;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* General styles for the search container */
+.search-container {
+    display: flex;                 /* Align items in a row */
+    align-items: center;          /* Center items vertically */
+    width: 100%;                  /* Full width */
+    max-width: 600px;             /* Limit maximum width */
+    margin: 20px auto;            /* Center the container */
+}
+
+.image-container {
+    position: relative;
+    width: 3000px; /* Set the width of the container */
+    height: 2000px; /* Set the height of the container */
+    overflow: hidden; /* Hide overflow */
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.image-2 {
+    opacity: 0; /* Initially hide the second image */
+}
+
+.image-container:hover .image-1 {
+    opacity: 0; /* Fade out the first image */
+}
+
+.image-container:hover .image-2 {
+    opacity: 1; /* Fade in the second image */
+}
+
+/* Styles for the search input */
+.search-input {
+    flex: 1;                      /* Take up remaining space */
+    padding: 10px;               /* Space inside the input */
+    border: 2px solid #007BFF;   /* Border color */
+    border-radius: 5px 0 0 5px;  /* Rounded corners for left side */
+    font-size: 16px;             /* Font size */
+    outline: none;               /* Remove outline on focus */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+ 
+/* Change border color on focus */
+.search-input:focus {
+    border-color: #0056b3;       /* Darker border on focus */
+}
+
+/* Styles for the search button */
+.search-button {
+    padding: 10px 20px;          /* Space inside the button */
+    background-color: #007BFF;   /* Button background color */
+    color: white;                 /* Text color */
+    border: none;                 /* Remove default border */
+    border-radius: 0 5px 5px 0;  /* Rounded corners for right side */
+    font-size: 16px;              /* Font size */
+    position: centre;
+    cursor: pointer;              /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Change background color on hover */
+.search-button:hover {
+    background-color: #0056b3;    /* Darker background on hover */
+}
+
+/* Change background color on active */
+.search-button:active {
+    background-color: #004494;    /* Even darker background when active */
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 300px; /* Set the width of the container */
+    height: 200px; /* Set the height of the container */
+    overflow: hidden; /* Hide overflow */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    opacity: 0; /* Initially hide all slides */
+    transition: opacity 1s ease; /* Smooth transition */
+}
+
+.fade {
+    animation: fade 1s forwards;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+containerimage {
+    background: #1e7bc2;
+    color: #fff;
+    text-align: centre;
+    position: fixed;
+    width: 20%;
+}
+
+/* Header */
+header {
+    background: #1e7bc2;
+    color: #fff;
+    text-align: centre;
+    position: fixed;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    background: #444;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main section */
+main {
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Sidebar */
+aside {
+    float: right;
+    width: 30%;
+    padding: 20px;
+    background: #ddd;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+aside h3 {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+   </style>
+   <body>
+    <div class="image-container">
+        <h1>Gallery</h1>
+        <img src="gallery\image1.jpg" alt="Image 1" class=".image-container">
+     <br>
+     <br>
+     <br>
+     <br>
+        <img src="gallery\image2.jpg" alt="Image 1" class=".image-container">
+    </div>
+   </body> 
+   <button onclick="redirectToGallery();" class="search-button">Home</button>
+    <script>
+        function redirectToGallery() {
+            window.location.href = "index.html";
+        }
+    </script>
+</html>
